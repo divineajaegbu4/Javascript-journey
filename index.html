@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- Avoid putting script inside head. However, if you want to use
+   script inside head, you must use "defer". defer tells the browser to wait until the
+   whole HTML is loaded, then run this script.-->
+
+  <body>
+    <button onclick="sayHi()">Click me</button>
+    <button>Number</button>
+    
+    <script src="./javascript/javascript-fundamentals/hello-world.js"></script>
+    <script src="./javascript/javascript-fundamentals/variables.js"></script>
+    <script src="./javascript/javascript-fundamentals/data-types.js"></script>
+    <script>
+      function sayHi() {
+        alert("Hello, world!");
+      }
+    </script>
+  </body>
+</html>
