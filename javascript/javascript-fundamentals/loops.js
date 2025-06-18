@@ -518,4 +518,7 @@ for (let i = 2; i <= n; i++) { // for each i...
   console.log( i ); // a prime
 }
 
+console.log("----------Another solution for even numbers")
+for(var z = 2; z < 11; z +=2) console.log(z);
+
 
