@@ -41,3 +41,9 @@ let fullName = `My full is ${firstName} ${lastName}`;
 console.log(fullName);
 
 console.log("==========Tracing the execution=======");
+console.log(
+    
+    "Divine"
+
+);
+
