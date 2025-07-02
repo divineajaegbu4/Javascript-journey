@@ -1,10 +1,9 @@
-console.log("==============The switch statement=========");
+console.log('==============The switch statement=========')
 // A switch statement can replace multiple if checks.
 
 // It gives a more descriptive way to compare a value with multiple variants.
 
 // The switch has one or more case blocks and an optional default.
-
 
 // switch(x) {
 //   case 'value1':  // if (x === 'value1')
@@ -23,26 +22,26 @@ console.log("==============The switch statement=========");
 // An example
 
 // If there is no break then the execution continues with the next case without any checks.
-let a = 7;
-let text;
+const a = 7
+let text
 
-switch(a) {
-    case 3:
-       text = "Too small";
-       break;
-    case 4:
-        text = "Correct!";
-        break;
-    case 5:
-        text = "Too big";
-        break;
-    default:
-        text = "I don't know the exact number!";
+switch (a) {
+  case 3:
+    text = 'Too small'
+    break
+  case 4:
+    text = 'Correct!'
+    break
+  case 5:
+    text = 'Too big'
+    break
+  default:
+    text = "I don't know the exact number!"
 }
 
-console.log(text);
+console.log(text)
 
-console.log("==========Grouping of “case”=========");
+console.log('==========Grouping of “case”=========')
 
 // Several variants of case which share the same code can be grouped.
 
@@ -50,7 +49,6 @@ console.log("==========Grouping of “case”=========");
 
 /*
 For grouped case:
-
 
   case 7: // (*) grouped two cases
   case 5:
@@ -70,7 +68,6 @@ A switch statement only checks one value at a time, not two.
 
 So to use a switch, we have to combine the two values into one string or value. For example:
 
-
 🧠 Explanation:
 Instead of checking color AND shape separately...
 
@@ -82,7 +79,6 @@ This way, we’re still doing the same logic, just in a format switch understand
 ✔️ Yes — if you're checking a combination of fixed values.
 
 ❌ But if the logic gets too complex (many values or functions), then using if with && might be simpler and clearer.
-
 
 let color = "red";
 let shape = "circle";
@@ -103,23 +99,22 @@ switch (combination) {
 
 */
 
-
 switch (a) {
   case 4:
-    console.log('Right!');
-    break;
+    console.log('Right!')
+    break
 
   case 7: // (*) grouped two cases
   case 5:
-    console.log('Wrong!');
-    console.log("Why don't you take a math class?");
-    break;
+    console.log('Wrong!')
+    console.log("Why don't you take a math class?")
+    break
 
   default:
-    console.log('The result is strange. Really.');
+    console.log('The result is strange. Really.')
 }
 
-console.log("========Tasks=========");
+console.log('========Tasks=========')
 // Rewrite the "switch" into an "if"
 
 // switch (browser) {
@@ -144,17 +139,17 @@ Please note: the construct browser == 'Chrome' || browser == 'Firefox' … is sp
 But the switch construct is still cleaner and more descriptive.
 */
 
-let browser = "Opera";
+const browser = 'Opera'
 
-if(browser === "Edge") {
-    console.log( "You've got the Edge!" );
-}else if(browser === "Chrome"
-    || browser === "Firefox" 
-    || browser === "Safari"
-    || browser || "Opera") {
-    console.log( 'Okay we support these browsers too' );
-}else {
-    console.log( 'We hope that this page looks ok!' );
+if (browser === 'Edge') {
+  console.log("You've got the Edge!")
+} else if (browser === 'Chrome' ||
+    browser === 'Firefox' ||
+    browser === 'Safari' ||
+    browser || 'Opera') {
+  console.log('Okay we support these browsers too')
+} else {
+  console.log('We hope that this page looks ok!')
 }
 
 // Rewrite "if" into "switch"
@@ -177,27 +172,26 @@ if (a == 2 || a == 3) {
 /*
 Please note: the break at the bottom is not required. But we put it to make the code future-proof.
 
-In the future, there is a chance that we’d want to add one more case, for example case 4. 
+In the future, there is a chance that we’d want to add one more case, for example case 4.
 And if we forget to add a break before it, at the end of case 3, there will be an error. So that’s a kind of self-insurance.
 */
 
-let num = +prompt('a?', '');
+const num = +prompt('a?', '')
 
-switch(num) {
-    case 0:
-       console.log(0);
-    break;
+switch (num) {
+  case 0:
+    console.log(0)
+    break
 
-    case 1: 
-      console.log(1);
-      break;
+  case 1:
+    console.log(1)
+    break
 
-    case 2:
-    case 3:
-        console.log("2, 3");
-        break;
+  case 2:
+  case 3:
+    console.log('2, 3')
+    break
 
-    default:
-        console.log("Infinite!");
+  default:
+    console.log('Infinite!')
 }
-

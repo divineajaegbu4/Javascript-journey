@@ -1,8 +1,8 @@
 // Interaction: alert, prompt and confirm
-console.log("================alert===============");
-alert("Hello");
+console.log('================alert===============')
+alert('Hello')
 
-console.log("===================prompt===============");
+console.log('===================prompt===============')
 // result = prompt(title, [default]);
 /*
 title
@@ -14,25 +14,24 @@ An optional second parameter, the initial value for the input field.
 
 // [] it means optional
 
-let agePrompt = prompt('How old are you?');
+const agePrompt = prompt('How old are you?')
 
-alert(`You are ${agePrompt} years old!`); // You are 100 years old!
+alert(`You are ${agePrompt} years old!`) // You are 100 years old!
 
 /* Warning: In IE: always supply a default
 The second parameter is optional, but if we don’t supply it, Internet Explorer will insert the text "undefined" into the prompt.
 */
 
-console.log("====================confirm================");
-let isBoss = confirm("Are you the boss?");
+console.log('====================confirm================')
+const isBoss = confirm('Are you the boss?')
 
-alert( isBoss );
+alert(isBoss)
 
-
-let wantsToDelete = confirm("Are you sure you want to delete this?");
+const wantsToDelete = confirm('Are you sure you want to delete this?')
 if (wantsToDelete) {
-    alert("Item deleted. ");
-}else {
-    alert("Item cancled! ");
+  alert('Item deleted. ')
+} else {
+  alert('Item cancled! ')
 };
 
 /*
@@ -61,13 +60,10 @@ Mobile devices: May not work well or look good
 
 // Exercise
 
-let first_name = prompt("What's is your first name");
+const first_name = prompt("What's is your first name")
 
-if(first_name === "Divine") {
-    alert(`My name is ${first_name}`)
-}else {
-    alert("Wrong name");
+if (first_name === 'Divine') {
+  alert(`My name is ${first_name}`)
+} else {
+  alert('Wrong name')
 }
-
-
-

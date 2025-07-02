@@ -1,15 +1,15 @@
 // There are four logical operators in JavaScript: || (OR), && (AND), ! (NOT), ?? (Nullish Coalescing).
 
-console.log("===============|| (OR)===========");
+console.log('===============|| (OR)===========')
 /*
-In classical programming, the logical OR is meant to manipulate boolean values only. 
+In classical programming, the logical OR is meant to manipulate boolean values only.
 If any of its arguments are true, it returns true, otherwise it returns false.
 */
 
-console.log( true || true );   // true
-console.log( false || true );  // true
-console.log( true || false );  // true
-console.log( false || false ); // false
+console.log(true || true) // true
+console.log(false || true) // true
+console.log(true || false) // true
+console.log(false || false) // false
 
 /*
 If an operand is not a boolean, it’s converted to a boolean for the evaluation.
@@ -18,29 +18,29 @@ For instance, the number 1 is treated as true, the number 0 as false:
 */
 
 if (1 || 0) { // works just like if( true || false )
-  console.log( 'truthy!' );
+  console.log('truthy!')
 }
 
 // Most of the time, OR || is used in an if statement to test if any of the given conditions is true.
 
 // For example:
 
-let hour = 9;
+const hour = 9
 
 if (hour < 10 || hour > 18) {
-  console.log( 'The office is closed.' );
+  console.log('The office is closed.')
 }
 
 // We can pass more conditions:
 // NB: It is not a good design to use to much logical operator e.g(||)
-let hour1 = 12;
-let isWeekend = true;
+const hour1 = 12
+const isWeekend = true
 
 if (hour1 < 10 || hour1 > 18 || isWeekend) {
-  console.log( 'The office is opened.' ); // it is the weekend
+  console.log('The office is opened.') // it is the weekend
 }
 
-console.log("===============Short-circuit evaluation.==========");
+console.log('===============Short-circuit evaluation.==========')
 /*
 Another feature of OR || operator is the so-called “short-circuit” evaluation.
 
@@ -49,29 +49,29 @@ It means that || processes its arguments until the first truthy value is reached
 
 // In the first line, the OR || operator stops the evaluation immediately upon seeing true, so the alert isn’t run.
 
-console.log(true || "not printed"); // true
-console.log(false || "printed"); // printed
+console.log(true || 'not printed') // true
+console.log(false || 'printed') // printed
 
-console.log("============&& (AND)============");
+console.log('============&& (AND)============')
 // In classical programming, AND returns true if both operands are truthy and false otherwise:
-console.log( true && true ); // true
-console.log( false && true );  // false
-console.log( true && false );  // false
-console.log( false && false ); // false
+console.log(true && true) // true
+console.log(false && true) // false
+console.log(true && false) // false
+console.log(false && false) // false
 
 // An example with if:
-let hour2 = 12;
-let minute = 30;
+const hour2 = 12
+const minute = 30
 
 if (hour2 === 12 && minute === 30) {
-  console.log( 'The time is 12:30' );
+  console.log('The time is 12:30')
 }
 
 // Just as with OR, any value is allowed as an operand of AND:
 if (1 && 0) { // evaluated as true && false
-  console.log( "won't work, because the result is falsy" );
-}else {
-    console.log("Nothing!")
+  console.log("won't work, because the result is falsy")
+} else {
+  console.log('Nothing!')
 }
 
 // How && works
@@ -83,8 +83,7 @@ if (1 && 0) { // evaluated as true && false
 
 // ➡️ All are truthy, so it returns the last one: true.
 
-console.log(1 && "hello" && true);  // true
-
+console.log(1 && 'hello' && true) // true
 
 // 🔹 && (AND) – If all values are falsy, it returns the first falsy it finds.
 
@@ -92,19 +91,19 @@ console.log(1 && "hello" && true);  // true
 
 // It’s the first falsy, so && stops there and returns null
 
-console.log(null && 0 && undefined); // null
+console.log(null && 0 && undefined) // null
 
-console.log("hello" && false && null); // false
+console.log('hello' && false && null) // false
 
 // The rules above are similar to OR. The difference is that AND returns the first falsy value while OR returns the first truthy one.
 
 // How || works
 
 // All are bad, so it gives you the last one: undefined
-console.log(0 || null || undefined); // undefined
+console.log(0 || null || undefined) // undefined
 
 // All are good, so it gives you the first one: divine
-console.log("divine" || 5 || true); // divine
+console.log('divine' || 5 || true) // divine
 
 // NB: Precedence of AND && is higher than OR ||
 
@@ -133,8 +132,8 @@ Then: true || false → true
 ✅ So it prints true
 */
 
-let result1 = true || false && false;
-console.log(result1); // true
+const result1 = true || false && false
+console.log(result1) // true
 
 // ✅ Example 2: With parentheses
 
@@ -147,8 +146,8 @@ Then: true && false → false
 
 ✅ So it prints false
 */
-let result2 = (true || false) && false;
-console.log(result2); // false
+const result2 = (true || false) && false
+console.log(result2) // false
 
 // ✅ Example 3: With numbers
 
@@ -161,17 +160,16 @@ Why?
 
 ✅ So it prints 2
 */
-let result3 = 0 || 1 && 2;
-console.log(result3); // 2
+const result3 = 0 || 1 && 2
+console.log(result3) // 2
 
-console.log("=======! (NOT)====");
-console.log( !true ); // false
-console.log( !0 ); // true
+console.log('=======! (NOT)====')
+console.log(!true) // false
+console.log(!0) // true
 
 // A double NOT !! is sometimes used for converting a value to boolean type:
-console.log( !!"non-empty string" ); // true
-console.log( !!null ); // false
-
+console.log(!!'non-empty string') // true
+console.log(!!null) // false
 
 // using double exclamation marks (!!) in JavaScript is considered a good design when you want to clearly convert a value to a boolean.
 // The !! (double NOT) converts any value to its boolean equivalent:
@@ -202,35 +200,35 @@ In some beginner projects, Boolean(value) might be more readable
 
 */
 
-console.log(!!"hello");   // true (non-empty string)
-console.log(!!0);         // false (0 is falsy)
-console.log(!!123);       // true (number ≠ 0)
-console.log(!!null);      // false
-console.log(!!undefined); // false
-console.log(!!{});        // true (object is truthy)
-console.log(!![]);        // true (array is truthy)
+console.log(!!'hello') // true (non-empty string)
+console.log(!!0) // false (0 is falsy)
+console.log(!!123) // true (number ≠ 0)
+console.log(!!null) // false
+console.log(!!undefined) // false
+console.log(!!{}) // true (object is truthy)
+console.log(!![]) // true (array is truthy)
 
 // There’s a little more verbose way to do the same thing – a built-in Boolean function:
-console.log( Boolean("non-empty string") ); // true
-console.log( Boolean(null) ); // false
+console.log(Boolean('non-empty string')) // true
+console.log(Boolean(null)) // false
 
 // The precedence of NOT ! is the highest of all logical operators, so it always executes first, before && or ||.
 
-console.log("=====================Task=============");
-console.log( null || 2 || undefined ); // 2
+console.log('=====================Task=============')
+console.log(null || 2 || undefined) // 2
 // alert( alert(1) || 2 || alert(3) ); // 2
 
-console.log( 1 && null && 2 ); // null
+console.log(1 && null && 2) // null
 // alert( alert(1) && alert(2) ); // 1 and undefine and the answer is undefined
 
-console.log( null || 2 && 3 || 4 ); // 3
+console.log(null || 2 && 3 || 4) // 3
 
-let ageMate = 86;
+const ageMate = 86
 
 if (ageMate >= 14 && ageMate <= 90) {
-    console.log("That's good!")
-}else {
-    console.log("Nothing!");
+  console.log("That's good!")
+} else {
+  console.log('Nothing!')
 }
 
 /*
@@ -241,31 +239,29 @@ Truthy: almost everything else, like -1, 1, "abc", [], {}
 */
 
 if (-1 || 0) {
-    console.log("First"); // -1
+  console.log('First') // -1
 }
 if (-1 && 0) {
-    console.log("Second"); // 0
+  console.log('Second') // 0
 }
 if (null || -1 && 1) {
-    console.log( 'Third' ); // 1
+  console.log('Third') // 1
 }
 
-let userName = prompt("Who's there?", '');
+const userName = prompt("Who's there?", '')
 
 if (userName === 'Admin') {
-
-  let pass = prompt('Password?', '');
+  const pass = prompt('Password?', '')
 
   if (pass === 'TheMaster') {
-    alert( 'Welcome!' );
+    alert('Welcome!')
   } else if (pass === '' || pass === null) {
-    alert( 'Canceled' );
+    alert('Canceled')
   } else {
-    alert( 'Wrong password' );
+    alert('Wrong password')
   }
-
 } else if (userName === '' || userName === null) {
-  alert( 'Canceled' );
+  alert('Canceled')
 } else {
-  alert( "I don't know you" );
+  alert("I don't know you")
 }

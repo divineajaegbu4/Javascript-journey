@@ -1,18 +1,17 @@
-console.log("===========Function expressions============");
+console.log('===========Function expressions============')
 // In JavaScript, a function is not a “magical language structure”, but a special kind of value.
 // A function expression means creating a function and assigning it to a variable.
 // The syntax that we used before is called a Function Declaration:
 
-
-function sayHi() {
-    console.log("Hi");
+function sayHi () {
+  console.log('Hi')
 };
 
-let greet = function(day) {
-    console.log(`Good ${day}!`);
-};
+const greet = function (day) {
+  console.log(`Good ${day}!`)
+}
 
-greet("Morning");
+greet('Morning')
 
 /*
 There is another syntax for creating a function that is called a Function Expression.
@@ -23,15 +22,11 @@ It allows us to create a new function in the middle of any expression.
 
 // For example:
 
-let sayHi2 = function() {
-  console.log( "Hello" );
-};
+const sayHi2 = function () {
+  console.log('Hello')
+}
 
-sayHi2();
-
-
-
-
+sayHi2()
 
 /*
 
@@ -47,12 +42,10 @@ run(function() {
   console.log("Running...");
 });
 
-
 2. When using arrow functions
 
 const greet = () => console.log("Hi!");
 greet();
-
 
 3. When using functions inside objects or callbacks
 
@@ -64,7 +57,6 @@ const user = {
 
 4. When you want to limit scope
 Function expressions are not hoisted, so they’re more controlled:
-
 
 sayHi(); ❌ Error: Cannot access before initialization
 
@@ -95,13 +87,13 @@ let sayHi = function() {
   // ...
 };
 
-The answer is simple: a Function Expression is created here as function(…) {…} inside the assignment statement: let sayHi = …;. 
+The answer is simple: a Function Expression is created here as function(…) {…} inside the assignment statement: let sayHi = …;.
 The semicolon ; is recommended at the end of the statement, it’s not a part of the function syntax.
 
 The semicolon would be there for a simpler assignment, such as let sayHi = 5;, and it’s also there for a function assignment.
 */
 
-console.log("============Callback functions==========");
+console.log('============Callback functions==========')
 // The function should ask the question and, depending on the user’s answer, call yes() or no():
 
 // A callback is just a function passed as an argument to another function.
@@ -149,10 +141,6 @@ Use function declarations if you want to define your main functions at the botto
 
 Use function expressions when passing functions (like callbacks) or when you want to control the scope.
 
-
-
-
-
 🧠 What is Hoisting?
 Hoisting means that JavaScript moves declarations to the top of the code before running it.
 
@@ -169,7 +157,6 @@ function sayHi() {
 Even though sayHi() is called before it's defined, it works!
 
 Why? Because JavaScript hoisted the function sayHi() to the top.
-
 
 ❌ Example 2: Function Expression is Not Hoisted
 sayHello(); // ❌ Error
@@ -197,7 +184,6 @@ They exist in a special area called the "temporal dead zone" — if you access t
 console.log(b); // ❌ ReferenceError
 let b = 10;
 
-
 ✅ Summary Table
 Type	    Hoisted?	    Value Hoisted?	       Safe to Use Before Declaration?
 function	✅ Yes	        ✅ Yes	             ✅ Yes
@@ -206,38 +192,38 @@ let / const	✅ (but blocked)	❌ No	             ❌ No (ReferenceError)
 function expression	❌ No	❌ No	             ❌ No
 */
 
-function ask(question, yes, no) {
-  if (question !== "") {
-    yes();
-  }else no();
+function ask (question, yes, no) {
+  if (question !== '') {
+    yes()
+  } else no()
 };
 
-function showOk() {
-  console.log( "You agreed." );
+function showOk () {
+  console.log('You agreed.')
 }
 
-function showCancel() {
-  console.log( "You canceled the execution." );
+function showCancel () {
+  console.log('You canceled the execution.')
 }
 
 // usage: functions showOk, showCancel are passed as arguments to ask
-ask("", showOk, showCancel);
+ask('', showOk, showCancel)
 
 // We can use Function Expressions to write an equivalent, shorter function:
-function ask2(question, yes, no) {
+function ask2 (question, yes, no) {
 //  question is undefined - it will not print the yes and "" is false it will not also print it-so the second function will run
   if (question ?? true) {
     yes()
-  }else no();
+  } else no()
 }
 
- let yourName;
- console.log(yourName)
+let yourName
+console.log(yourName)
 ask2(
   undefined,
-  function() { console.log("You agreed well!"); },
-  function() { console.log("You canceled the execution."); }
-);
+  function () { console.log('You agreed well!') },
+  function () { console.log('You canceled the execution.') }
+)
 
 /*
 Best function to use for callback functions:
@@ -257,7 +243,6 @@ You don’t need this
 You want clean, modern code
 
 [1, 2, 3].forEach(num => console.log(num * 2));
-
 
 ✅ 2. Use anonymous function expressions when:
 You need to run more logic in the callback
@@ -340,7 +325,7 @@ welcome(); // Error: welcome is not defined
 
 What can we do to make welcome visible outside of if?
 
-The correct approach would be to use a Function Expression and assign welcome to 
+The correct approach would be to use a Function Expression and assign welcome to
 the variable that is declared outside of if and has the proper visibility.
 
 let age = prompt("What is your age?", 18);
@@ -372,26 +357,25 @@ let welcome = (age < 18) ?
 
 welcome(); // ok now
 
-
 When to choose Function Declaration versus Function Expression?
-As a rule of thumb, when we need to declare a function, the first thing to consider is Function Declaration syntax. 
+As a rule of thumb, when we need to declare a function, the first thing to consider is Function Declaration syntax.
 It gives more freedom in how to organize our code, because we can call such functions before they are declared.
 
-That’s also better for readability, as it’s easier to look up function f(…) {…} in the code than let f = function(…) {…};. 
+That’s also better for readability, as it’s easier to look up function f(…) {…} in the code than let f = function(…) {…};.
 Function Declarations are more “eye-catching”.
 
 …But if a Function Declaration does not suit us for some reason, or we need a
  conditional declaration (we’ve just seen an example), then Function Expression should be used.
 
-In most cases when we need to declare a function, a Function Declaration is preferable, 
+In most cases when we need to declare a function, a Function Declaration is preferable,
 because it is visible prior to the declaration itself. That gives us more flexibility in code organization, and is usually more readable.
 
-So we should use a Function Expression only when a Function Declaration is not fit for the task. 
+So we should use a Function Expression only when a Function Declaration is not fit for the task.
 We’ve seen a couple of examples of that in this chapter, and will see more in the future.
 */
 
-let welcome = (age < 18) ?
-  () => { return "Hello!"; } :
-  () => { return "Greetings!"; };
+const welcome = (age < 18)
+  ? () => { return 'Hello!' }
+  : () => { return 'Greetings!' }
 
-console.log(welcome()); // ok now
+console.log(welcome()) // ok now

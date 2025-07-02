@@ -1,9 +1,9 @@
-console.log("===========Javascript Specials========");
+console.log('===========Javascript Specials========')
 // Semicolons are not required after code blocks {...} and syntax constructs with them like loops:
-function f() {
+function f () {
   // no semicolon needed after function declaration
 }
 
-for(;;) {
+for (;;) {
   // no semicolon needed after the loop
 }
