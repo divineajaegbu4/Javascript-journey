@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-binary-expression */
 // There are four logical operators in JavaScript: || (OR), && (AND), ! (NOT), ?? (Nullish Coalescing).
 
 console.log('===============|| (OR)===========')
@@ -17,6 +18,7 @@ If an operand is not a boolean, it’s converted to a boolean for the evaluation
 For instance, the number 1 is treated as true, the number 0 as false:
 */
 
+// eslint-disable-next-line no-constant-condition
 if (1 || 0) { // works just like if( true || false )
   console.log('truthy!')
 }
@@ -68,6 +70,7 @@ if (hour2 === 12 && minute === 30) {
 }
 
 // Just as with OR, any value is allowed as an operand of AND:
+// eslint-disable-next-line no-constant-condition
 if (1 && 0) { // evaluated as true && false
   console.log("won't work, because the result is falsy")
 } else {
@@ -238,12 +241,15 @@ Falsy values: false, 0, "", null, undefined, NaN
 Truthy: almost everything else, like -1, 1, "abc", [], {}
 */
 
+// eslint-disable-next-line no-constant-condition
 if (-1 || 0) {
   console.log('First') // -1
 }
+// eslint-disable-next-line no-constant-condition
 if (-1 && 0) {
   console.log('Second') // 0
 }
+// eslint-disable-next-line no-constant-condition
 if (null || -1 && 1) {
   console.log('Third') // 1
 }
