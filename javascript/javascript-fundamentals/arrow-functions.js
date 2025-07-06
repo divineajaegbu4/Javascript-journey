@@ -39,6 +39,7 @@ const sum1 = (a, b) => { // the curly brace opens a multiline function
 
 console.log(sum1(1, 2)) // 3
 
+
 console.log('===========Rewrite with arrow function=======')
 /* function ask(question, yes, no) {
   if (confirm(question)) yes();
